@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2 ncml-2.2.xsd ">
+
+<variable name="u10"> <attribute name = "default_name" value = "x_wind" /></variable>
+<variable name="v10"> <attribute name = "default_name" value = "y_wind" /></variable>
+</netcdf>

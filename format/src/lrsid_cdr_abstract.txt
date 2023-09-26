@@ -1,0 +1,3 @@
+Gridded ice displacement fields obtained from satellite image processing. It is
+a low resolution product (75km resolution). The time span of the ice displacement is approximately 24 hours.
+This dataset is intended as a climate data record. FILL IN HERE!!!

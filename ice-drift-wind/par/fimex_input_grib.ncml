@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdmGribReaderConfig xmlns="http://www.met.no/schema/fimex/cdmGribReaderConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <processOptions>
+        <!-- parameters to select: all, definedOnly -->
+        <option name="selectParameters" value="definedOnly"/>
+    </processOptions>
+
+    <xi:include href="global-attributes.xml"/>
+    <xi:include href="axes_sfc.xml"/>
+    <xi:include href="variables_sfc.xml"/>
+</cdmGribReaderConfig>

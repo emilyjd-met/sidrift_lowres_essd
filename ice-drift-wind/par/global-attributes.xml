@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+
+<global_attributes xmlns="http://www.met.no/schema/fimex/cdmGribReaderConfig">
+    <attribute name="Conventions" value="CF-1.6" type="string"/>
+    <attribute name="institution" value="MET Norway, met.no" type="string"/>
+    <attribute name="source" value="ECMWF, ecmwf.int" type="string"/>
+    <attribute name="min_time" value="%MIN_DATETIME(%Y-%m-%d %H:%M:%SZ)%" type="string"/>
+    <attribute name="max_time" value="%MAX_DATETIME(%Y-%m-%d)%" type="string"/>
+    <attribute name="Expires" value="%MAX_DATETIME(%Y-%m-%d,2419200)%" type="string"/>
+</global_attributes>

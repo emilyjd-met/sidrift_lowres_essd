@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<variables xmlns="http://www.met.no/schema/fimex/cdmGribReaderConfig">
+  <!-- 10u -->
+  <parameter name="x_wind_10m" type="float">
+    <grib1 indicatorOfParameter="165" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="Zonal 10 metre wind (U10M)" type="string"/>
+    <attribute name="short_name" value="10u" type="string"/>
+    <attribute name="standard_name" value="x_wind" type="string"/>
+    <attribute name="units" value="m/s" type="string"/>
+    <spatial_vector direction="x,longitude" counterpart="y_wind_10m"/>
+  </parameter>
+  <!-- 10v -->
+  <parameter name="y_wind_10m" type="float">
+    <grib1 indicatorOfParameter="166" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="Meridional 10 metre wind (V10M)" type="string"/>
+    <attribute name="short_name" value="10v" type="string"/>
+    <attribute name="standard_name" value="y_wind" type="string"/>
+    <attribute name="units" value="m/s" type="string"/>
+    <spatial_vector direction="y,latitude" counterpart="x_wind_10m"/>
+  </parameter>
+  <!-- 10fg3 -->
+  <parameter name="wind_speed_of_gust_10m_max3h" type="float">
+    <grib2 discipline="192" parameterCategory="228" parameterNumber="28"/>
+    <grib1 indicatorOfParameter="28" gribTablesVersionNo="228" identificationOfOriginatingGeneratingCentre="98"/>
+    <attribute name="short_name" value="10fg3" type="string"/>
+    <attribute name="long_name" value="10m wind gust last 3 hours" type="string"/>
+    <attribute name="standard_name" value="wind_speed_of_gust" type="string"/>
+    <attribute name="units" value="m/s" type="string"/>
+  </parameter>
+  <!-- 2d -->
+  <parameter name="dew_point_temperature_2m" type="float">
+    <grib1 indicatorOfParameter="168" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1" levelNo="0"/>
+    <attribute name="short_name" value="2d" type="string"/>
+    <attribute name="standard_name" value="dew_point_temperature" type="string"/>
+    <attribute name="units" value="K" type="string"/>
+  </parameter>
+  <!-- 2t -->
+  <parameter name="air_temperature_2m" type="float">
+    <grib1 indicatorOfParameter="167" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="Screen level temperature (T2M)" type="string"/>
+    <attribute name="short_name" value="2t" type="string"/>
+    <attribute name="standard_name" value="air_temperature" type="string"/>
+    <attribute name="units" value="K" type="string"/>
+  </parameter>
+  <!-- cape -->
+  <parameter name="specific_convective_available_potential_energy" type="float">
+    <grib1 indicatorOfParameter="59" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1" levelNo="0"/>
+    <attribute name="long_name" value="Convective Available Potential Energy (CAPE)" type="string"/>
+    <attribute name="short_name" value="cape" type="string"/>
+    <attribute name="standard_name" value="specific_convective_available_potential_energy" type="string"/>
+    <attribute name="units" value="J/kg" type="string"/>
+  </parameter>
+  <!-- ci -->
+  <parameter name="sea_ice_area_fraction" type="float">
+    <grib1 indicatorOfParameter="31" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98"/>
+    <grib2 discipline="10" parameterCategory="2" parameterNumber="10"/>
+    <attribute name="_FillValue" value="9.9692099683868690e+36" type="float" />
+    <attribute name="long_name" value="Fraction of sea-ice" type="string"/>
+    <attribute name="short_name" value="ci" type="string"/>
+    <attribute name="standard_name" value="sea_ice_area_fraction" type="string"/>
+    <attribute name="units" value="1" type="string"/>
+  </parameter>
+  <!-- cp -->
+  <parameter name="lwe_thickness_of_convective_precipitation_amount_acc" type="float">
+    <grib1 indicatorOfParameter="143" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="Convective precipitation" type="string"/>
+    <attribute name="short_name" value="cp" type="string"/>
+    <attribute name="standard_name" value="lwe_thickness_of_convective_precipitation_amount" type="string"/>
+    <attribute name="units" value="m" type="string"/>
+  </parameter>
+  <!-- deg0l -->
+  <parameter name="freezing_level_altitude" type="float">
+    <grib1 indicatorOfParameter="024" gribTablesVersionNo="228" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="Height of level (counted from surface - Knd lowest model level) where the temperature passes from positive to negative values corresponding to the top level of a warm inversion layer. If a second warm inversion layer is encountered then the zero degree level correspond to the top of the Knd inversion layer." type="string"/>
+    <attribute name="short_name" value="deg0l" type="string"/>
+    <attribute name="standard_name" value="freezing_level_altitude" type="string"/>
+    <attribute name="units" value="m" type="string"/>
+  </parameter>
+  <!-- ewss -->
+  <parameter name="eastward_surface_stress" type="float">
+    <grib1 indicatorOfParameter="180" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="eastward_surface_stress" type="string"/>
+    <attribute name="short_name" value="ewss" type="string"/>
+    <attribute name="metno_name" value="eastward_surface_stress" type="string"/>
+    <attribute name="units" value="N s / m^2" type="string"/>
+  </parameter>
+  <!-- fzra -->
+  <parameter name="lwe_thickness_of_freezing_rain_amount_acc" type="float">
+    <grib1 indicatorOfParameter="216" gribTablesVersionNo="228" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1" levelNo="0"/>
+    <attribute name="long_name" value="Freezing rain precipitation at the surface. Accumulated field" type="string"/>
+    <attribute name="short_name" value="fzra" type="string"/>
+    <attribute name="metno_name" value="lwe_thickness_of_freezing_rain_amount" type="string"/>
+    <attribute name="units" value="m" type="string"/>
+  </parameter>
+  <!-- hcc -->
+  <parameter name="high_type_cloud_area_fraction" type="float">
+    <grib1 indicatorOfParameter="188" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="Cloud cover of high clouds (HCC)" type="string"/>
+    <attribute name="short_name" value="hcc" type="string"/>
+    <attribute name="standard_name" value="high_type_cloud_area_fraction" type="string"/>
+    <attribute name="units" value="1" type="string"/>
+  </parameter>
+  <!-- lcc -->
+  <parameter name="low_type_cloud_area_fraction" type="float">
+    <grib1 indicatorOfParameter="186" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="Cloud cover of low clouds (LCC)" type="string"/>
+    <attribute name="short_name" value="lcc" type="string"/>
+    <attribute name="standard_name" value="low_type_cloud_area_fraction" type="string"/>
+    <attribute name="units" value="1" type="string"/>
+  </parameter>
+  <!-- lsp -->
+  <parameter name="lwe_thickness_of_stratiform_precipitation_amount_acc" type="float">
+    <grib1 indicatorOfParameter="142" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="Frontal precipitation" type="string"/>
+    <attribute name="short_name" value="lsp" type="string"/>
+    <attribute name="standard_name" value="lwe_thickness_of_stratiform_precipitation_amount" type="string"/>
+    <attribute name="units" value="m" type="string"/>
+  </parameter>
+  <!-- mcc -->
+  <parameter name="medium_type_cloud_area_fraction" type="float">
+    <grib1 indicatorOfParameter="187" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="Cloud cover of medium height clouds (MCC)" type="string"/>
+    <attribute name="short_name" value="mcc" type="string"/>
+    <attribute name="standard_name" value="medium_type_cloud_area_fraction" type="string"/>
+    <attribute name="units" value="1" type="string"/>
+  </parameter>
+  <!-- mn2t6 -->
+  <parameter name="air_temperature_2m_min6h" type="float">
+    <grib1 indicatorOfParameter="122" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98"/>
+    <attribute name="long_name" value="Minimum temperature at 2 metres in the last 6 hours" type="string"/>
+    <attribute name="short_name" value="mn2t6" type="string"/>
+    <attribute name="standard_name" value="air_temperature" type="string"/>
+    <attribute name="units" value="K" type="string"/>
+    <attribute name="cell_methods" value="time: maximum (interval: 6 hours)" type="string"/>
+  </parameter>
+  <!-- mx2t6 -->
+  <parameter name="air_temperature_2m_max6h" type="float">
+    <grib1 indicatorOfParameter="121" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98"/>
+    <attribute name="long_name" value="Maximum temperature at 2 metres in the last 6 hours" type="string"/>
+    <attribute name="short_name" value="mx2t6" type="string"/>
+    <attribute name="standard_name" value="air_temperature" type="string"/>
+    <attribute name="units" value="K" type="string"/>
+    <attribute name="cell_methods" value="time: maximum (interval: 6 hours)" type="string"/>
+  </parameter>
+  <!-- msl -->
+  <parameter name="air_pressure_at_sea_level" type="float">
+    <grib1 indicatorOfParameter="151" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1" levelNo="0"/>
+    <attribute name="long_name" value="Mean Sea Level Pressure (MSLP)" type="string"/>
+    <attribute name="short_name" value="msl" type="string"/>
+    <attribute name="standard_name" value="air_pressure_at_sea_level" type="string"/>
+    <attribute name="units" value="Pa" type="string"/>
+  </parameter>
+  <!-- nsss -->
+  <parameter name="northward_surface_stress" type="float">
+    <grib1 indicatorOfParameter="181" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="northward_surface_stress" type="string"/>
+    <attribute name="short_name" value="nsss" type="string"/>
+    <attribute name="metno_name" value="northward_surface_stress" type="string"/>
+    <attribute name="units" value="N s / m^2" type="string"/>
+  </parameter>
+  <!-- sd -->
+  <parameter name="lwe_thickness_of_surface_snow_amount" type="float">
+    <grib1 indicatorOfParameter="141" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1" levelNo="0"/>
+    <attribute name="long_name" value="Snow Water Equivivalent (SWE)" type="string"/>
+    <attribute name="short_name" value="sd" type="string"/>
+    <attribute name="standard_name" value="lwe_thickness_of_surface_snow_amount" type="string"/>
+    <attribute name="units" value="m" type="string"/>
+  </parameter>
+  <!-- sf -->
+  <parameter name="lwe_thickness_of_snowfall_amount_acc" type="float">
+    <grib1 indicatorOfParameter="144" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <!-- <grib2 180 /> -->
+    <attribute name="long_name" value="Total accumulated solid precipitation" type="string"/>
+    <attribute name="short_name" value="sf" type="string"/>
+    <attribute name="standard_name" value="lwe_thickness_of_snowfall_amount" type="string"/>
+    <attribute name="units" value="m" type="string"/>
+  </parameter>
+  <!-- skt -->
+  <parameter name="surface_temperature" type="float">
+    <grib1 indicatorOfParameter="235" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1" levelNo="0"/>
+    <attribute name="long_name" value="Surface (skin) temperature (SKT)" type="string"/>
+    <attribute name="short_name" value="skt" type="string"/>
+    <attribute name="standard_name" value="surface_temperature" type="string"/>
+    <attribute name="units" value="K" type="string"/>
+  </parameter>
+  <!-- slhf -->
+  <parameter name="surface_upward_latent_heat_flux_acc" type="float">
+        <grib1 indicatorOfParameter="147" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" levelNo="0" typeOfLevel="1"/>
+        <attribute name="long_name" value="Accumulated latent heat flux" type="string"/>
+        <attribute name="short_name" value="slhf" type="string"/>
+        <attribute name="standard_name" value="surface_upward_latent_heat_flux" type="string"/>
+        <attribute name="units" value="J/m^2" type="string"/>
+    </parameter>
+  <!-- sp -->
+  <parameter name="surface_air_pressure" type="float">
+    <grib1 indicatorOfParameter="134" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1" levelNo="0"/>
+    <attribute name="long_name" value="Surface air pressure" type="string"/>
+    <attribute name="short_name" value="sp" type="string"/>
+    <attribute name="standard_name" value="surface_air_pressure" type="string"/>
+    <attribute name="units" value="Pa" type="string"/>
+  </parameter>
+  <!-- sshf -->
+  <parameter name="sensible_heat_flux" type="float">
+    <grib1 indicatorOfParameter="146" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="Accumulated sensible heat flux" type="string"/>
+    <attribute name="short_name" value="sshf" type="string"/>
+    <attribute name="standard_name" value="integral_of_surface_downward_sensible_heat_flux_wrt_time" type="string"/>
+    <attribute name="units" value="J m**-2" type="string"/>
+  </parameter>
+  <!-- ssr -->
+  <parameter name="integral_of_surface_net_downward_shortwave_flux_wrt_time" type="float">
+    <grib1 indicatorOfParameter="176" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1" levelNo="0"/>
+    <attribute name="long_name" value="Surface net solar radiation" type="string"/>
+    <attribute name="short_name" value="ssr" type="string"/>
+    <attribute name="standard_name" value="integral_of_surface_net_downward_shortwave_flux_wrt_time" type="string"/>
+    <attribute name="units" value="W s/m^2" type="string"/>
+  </parameter>
+  <!-- ssrd -->
+  <parameter name="integral_of_surface_downwelling_shortwave_flux_in_air_wrt_time" type="float">
+    <grib1 indicatorOfParameter="169" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1" levelNo="0"/>
+    <attribute name="long_name" value="Surface solar radiation downwards" type="string"/>
+    <attribute name="short_name" value="ssrd" type="string"/>
+    <attribute name="standard_name" value="integral_of_surface_downwelling_shortwave_flux_in_air_wrt_time" type="string"/>
+    <attribute name="units" value="W s/m^2" type="string"/>
+  </parameter>
+  <!-- sst -->
+  <parameter name="sea_surface_temperature" type="float">
+    <grib1 indicatorOfParameter="34" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="_FillValue" value="9.9692099683868690e+36" type="float" />
+    <attribute name="long_name" value="Sea Surface Temperature (SST)" type="string"/>
+    <attribute name="short_name" value="sst" type="string"/>
+    <attribute name="standard_name" value="sea_surface_temperature" type="string"/>
+    <attribute name="units" value="K" type="string"/>
+  </parameter>
+  <!-- strd -->
+  <parameter name="integral_of_surface_downwelling_longwave_flux_in_air_wrt_time" type="float">
+    <grib1 indicatorOfParameter="175" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1" levelNo="0"/>
+    <attribute name="long_name" value="Surface thermal radiation downwards" type="string"/>
+    <attribute name="short_name" value="strd" type="string"/>
+    <attribute name="standard_name" value="integral_of_surface_downwelling_longwave_flux_in_air_wrt_time" type="string"/>
+    <attribute name="units" value="W s/m^2" type="string"/>
+  </parameter>
+  <!-- swvl1 -->
+  <parameter name="volume_fraction_of_condensed_water_in_soil_sl1" type="float">
+    <grib1 indicatorOfParameter="39" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="112"/>
+    <attribute name="long_name" value="Volumetric soil water content level 1 (top)" type="string"/>
+    <attribute name="short_name" value="swvl1" type="string"/>
+    <attribute name="standard_name" value="volume_fraction_of_condensed_water_in_soil" type="string"/>
+    <attribute name="units" value="m^3/m^3" type="string"/>
+    <!-- ec unit m3/m3? -->
+  </parameter>
+  <!-- tcc -->
+  <parameter name="cloud_area_fraction" type="float">
+    <grib1 indicatorOfParameter="164" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="Total cloud cover (TCC)" type="string"/>
+    <attribute name="short_name" value="tcc" type="string"/>
+    <attribute name="standard_name" value="cloud_area_fraction" type="string"/>
+    <attribute name="units" value="1" type="string"/>
+  </parameter>
+  <!-- fog -->
+  <parameter name="fog_area_fraction" type="float">
+    <grib1 indicatorOfParameter="56" gribTablesVersionNo="253" typeOfLevel="105"/>
+    <grib2 discipline="192" parameterCategory="201" parameterNumber="56" typeOfLevel="103" levelNo="0"/>
+    <attribute name="long_name" value="Fog" type="string" />
+    <attribute name="metno_name" value="fog_area_fraction" type="string" />
+    <attribute name="units" value="1" type="string" />
+  </parameter>
+
+  <!-- tclw -->
+  <parameter name="atmosphere_mass_content_of_cloud_liquid_water" type="float">
+    <grib1 indicatorOfParameter="78" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98"/>
+    <attribute name="long_name" value="Total cloud liquid water contents (TCLW)" type="string"/>
+    <attribute name="short_name" value="tclw" type="string"/>
+    <attribute name="standard_name" value="atmosphere_mass_content_of_cloud_liquid_water" type="string"/>
+    <attribute name="units" value="kg/m2" type="string"/>
+  </parameter>
+  <!-- tcwv -->
+  <parameter name="atmosphere_mass_content_of_water_vapor" type="float">
+    <grib1 indicatorOfParameter="137" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98"/>
+    <attribute name="long_name" value="Total cloud vapour water contents (TCVW)" type="string"/>
+    <attribute name="short_name" value="tcwv" type="string"/>
+    <attribute name="standard_name" value="atmosphere_mass_content_of_water_vapor" type="string"/>
+    <attribute name="units" value="kg/m2" type="string"/>
+  </parameter>
+  <!-- tp -->
+  <parameter name="precipitation_amount_acc" type="float">
+    <grib1 indicatorOfParameter="228" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="Accumulated total precipitation" type="string"/>
+    <attribute name="short_name" value="tp" type="string"/>
+    <attribute name="standard_name" value="precipitation_amount" type="string"/>
+    <attribute name="units" value="Mg/m^2" type="string"/>
+  </parameter>
+  <!-- vis -->
+  <parameter name="visibility_in_air" type="float">
+    <grib1 indicatorOfParameter="20" gribTablesVersionNo="1,2,3,200"/>
+    <grib2 discipline="0" parameterCategory="19" parameterNumber="0"/>
+    <attribute name="long_name" value="Visibility in Air" type="string"/>
+    <attribute name="short_name" value="vis" type="string"/>
+    <attribute name="standard_name" value="visibility_in_air" type="string"/>
+    <attribute name="units" value="m" type="string"/>
+  </parameter>
+  <!-- z -->
+  <parameter name="surface_geopotential" type="float" constantTime="true">
+    <grib1 indicatorOfParameter="129" gribTablesVersionNo="128" identificationOfOriginatingGeneratingCentre="98" typeOfLevel="1"/>
+    <attribute name="long_name" value="Surface geopotential (fis)" type="string"/>
+    <attribute name="short_name" value="z" type="string"/>
+    <attribute name="standard_name" value="surface_geopotential" type="string"/>
+    <attribute name="units" value="m^2/s^2" type="string"/>
+  </parameter>
+</variables>

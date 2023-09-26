@@ -1,0 +1,74 @@
+REGION: nh-stere-125 {
+       NAME:           Arctic Polar Stereographic grid (12.5 km)
+       PCS_ID:         nh-stere-125
+       PCS_DEF:        proj=stere, a=6378273, b=6356889.44891, lat_0=90, lat_ts=70, lon_0=-45
+       XSIZE:          608
+       YSIZE:          896
+       # The C code uses pixel centres and pyresample uses corners, so need to account for extra half pixel
+       AREA_EXTENT:    (-3856250.0, -5343750.0, 3743750.0, 5856250.0)
+};
+
+REGION: nh-stere-625 {
+       NAME:           Arctic Polar Stereographic grid (62.5 km)
+       PCS_ID:         nh-stere-625
+       PCS_DEF:        proj=stere, a=6378273, b=6356889.44891, lat_0=90, lat_ts=70, lon_0=-45, units=m
+       XSIZE:          119
+       YSIZE:          177
+       # The C code uses pixel centres and pyresample uses corners, so need to account for extra half pixel
+       AREA_EXTENT:    (-3781250.0, -5281250.0, 3656250.0, 5781250.0)
+};
+
+REGION: sh-stere-625 {
+       NAME:           Antarctic Polar Stereographic grid (62.5 km)
+       PCS_ID:         sh-stere-625
+       PCS_DEF:        proj=stere, a=6378273, b=6356889.44891, lat_0=-90, lat_ts=-70, lon_0=0, units=m
+       XSIZE:          125
+       YSIZE:          131
+       AREA_EXTENT:    (-3906250.0, -3906250.0, 3906250.0, 4281250.0)
+};
+
+#
+#REGION: sh-stere-125 {
+#       NAME:           Antarctic Polar Stereographic grid (12.5 km)
+#       PCS_ID:         sh-stere-125
+#       PCS_DEF:        proj=stere, a=6378273, b=6356889.44891, lat_0=-90, lat_ts=-70, lon_0=0
+#       XSIZE:          430
+#       YSIZE:          430
+#       AREA_EXTENT:    (-5387500,-5387500,5387500,5387500)
+#};
+#
+REGION: nh-ease2-750 {
+       NAME:           Lambert Azimuthal Equal Area grid (75.0 km)
+       PCS_ID:         nh-ease2-750
+       PCS_DEF:        proj=laea, lat_0=90, lon_0=0, x_0=0, y_0=0, datum=WGS84, units=m
+       XSIZE:          144
+       YSIZE:          144
+       AREA_EXTENT:    (-5400000.0, -5400000.0, 5400000.0, 5400000.0)
+};
+
+REGION: sh-ease2-750 {
+       NAME:           Lambert Azimuthal Equal Area grid (75.0 km)
+       PCS_ID:         sh-ease2-750
+       PCS_DEF:        proj=laea, lat_0=-90, lon_0=0, x_0=0, y_0=0, datum=WGS84, units=m
+       XSIZE:          144
+       YSIZE:          144
+       AREA_EXTENT:    (-5400000.0, -5400000.0, 5400000.0, 5400000.0)
+};
+
+REGION: nh-ease2-125 {
+       NAME:           Lambert Azimuthal Equal Area (12.5 km)
+       PCS_ID:         nh-ease2-125
+       PCS_DEF:        proj=laea, lat_0=90, lon_0=0, x_0=0, y_0=0, datum=WGS84
+       XSIZE:          864
+       YSIZE:          864
+       AREA_EXTENT:    (-5400000.0,-5400000.0,5400000.0,5400000.0)
+};
+
+REGION: sh-ease2-125 {
+       NAME:           Lambert Azimuthal Equal Area (12.5 km)
+       PCS_ID:         sh-ease2-125
+       PCS_DEF:        proj=laea, lat_0=-90, lon_0=0, x_0=0, y_0=0, datum=WGS84
+       XSIZE:          864
+       YSIZE:          864
+       AREA_EXTENT:    (-5400000.0,-5400000.0,5400000.0,5400000.0)
+};

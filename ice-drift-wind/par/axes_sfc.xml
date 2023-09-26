@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<axes xmlns="http://www.met.no/schema/fimex/cdmGribReaderConfig">
+  <time id="time" name="time" type="double">
+    <attribute name="long_name" value="time" type="string"/>
+    <attribute name="standard_name" value="time" type="string"/>
+    <attribute name="units" value="seconds since 1970-01-01 00:00:00 +0000" type="string"/>
+    <attribute name="calendar" value="standard" type="string"/>
+  </time>
+  <spatial_axis typeOfGrid="regular_ll" id="x" name="longitude" type="float">
+    <attribute name="long_name" value="longitude" type="string"/>
+    <attribute name="units" value="degrees_east" type="string"/>
+  </spatial_axis>
+  <spatial_axis typeOfGrid="regular_ll" id="y" name="latitude" type="float">
+    <attribute name="long_name" value="latitude" type="string"/>
+    <attribute name="units" value="degrees_north" type="string"/>
+  </spatial_axis>
+  <spatial_axis id="longitude" name="longitude">
+    <attribute name="valid_max" value="180." type="float"/>
+    <attribute name="valid_min" value="-180." type="float"/>
+    <attribute name="long_name" value="longitude" type="string"/>
+    <attribute name="standard_name" value="longitude" type="string"/>
+    <attribute name="units" value="degrees_east" type="string"/>
+  </spatial_axis>
+  <spatial_axis id="latitude" name="latitude">
+    <attribute name="valid_max" value="90." type="float"/>
+    <attribute name="valid_min" value="-90." type="float"/>
+    <attribute name="long_name" value="latitude" type="string"/>
+    <attribute name="standard_name" value="latitude" type="string"/>
+    <attribute name="units" value="degrees_north" type="string"/>
+  </spatial_axis>
+  <!-- grib2 code table 4.5; grib1 code table 3 / 3a -->
+  <vertical_axis id="surface" name="surface" grib2_id="1" grib1_id="1" type="short">
+    <attribute name="_FillValue" value="-32767" type="short"/>
+    <attribute name="description" value="ground or water surface" type="string"/>
+    <attribute name="long_name" value="surface" type="string"/>
+    <attribute name="positive" value="up" type="string"/>
+    <attribute name="units" value="m" type="string"/>
+  </vertical_axis>
+  <vertical_axis id="pressure" name="pressure" grib2_id="100" grib1_id="100" type="float">
+    <!-- Isobaric level -->
+    <attribute name="description" value="pressure" type="string"/>
+    <attribute name="long_name" value="pressure" type="string"/>
+    <attribute name="standard_name" value="air_pressure" type="string"/>
+    <attribute name="positive" value="down" type="string"/>
+    <grib1>
+      <attribute name="units" value="hPa" type="string"/>
+    </grib1>
+    <grib2>
+      <attribute name="units" value="Pa" type="string"/>
+    </grib2>
+  </vertical_axis>
+  <vertical_axis id="depth_between_layers" name="depth_between_layers" grib1_id="112" type="short">
+    <!-- TODO, the 2 layers are not read correctly yet. I need a special function to extract the 2 levels from one grib-field like in  hybridSigma -->
+    <attribute name="description" value="depth between layers below land surface" type="string"/>
+    <attribute name="long_name" value="depth between layes" type="string"/>
+    <attribute name="positive" value="down" type="string"/>
+    <attribute name="standard_name" value="depth" type="string"/>
+    <attribute name="units" value="cm" type="string"/>
+  </vertical_axis>
+</axes>
