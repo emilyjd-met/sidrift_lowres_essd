@@ -376,8 +376,8 @@ def traj_plot(trajinp, region, startdate, enddate, output, label_traj,
             # Label
             if label_traj and j == 0:
                 label = '{}-{}'.format(tjs[i]['id'], tjs[i]['network'])
-                if ((x1 > llx) and (x1 < urx) and (y1 > lly) and (y1 < ury)):
-                    ax.text(x0, y0, label, fontsize='small')
+                #if ((x1 > llx) and (x1 < urx) and (y1 > lly) and (y1 < ury)):
+                ax.text(x0, y0, label, fontsize='small')
 
             # Plot the drift
             ax.plot(x0, y0, '-o', markersize=2, color=col)

@@ -40,7 +40,7 @@ def read_args():
                    help='Duration of the ice drift.')
     p.add_argument('-a', 'area', choices=valid_area,
                    help='Area for which the parameters are calculated, '
-                   'valid choices are '.format(valid_area))
+                   'valid choices are {}'.format(valid_area))
     p.add_argument('-w', '--wind_dir',
                    help='Input directory containing wind files.', default=None)
     p.add_argument('-p', '--param_file', default=None,

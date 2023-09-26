@@ -439,7 +439,7 @@ if __name__ == '__main__':
         if args.INSTR.startswith('amsr'):
             f = (btvar + '37',)
         elif args.INSTR.startswith('cimr'):
-            f = (batvar + '37',)
+            f = (btvar + '37',)
         elif args.INSTR.startswith('ssmi'):
             f = (btvar + '90',)
         else:

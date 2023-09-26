@@ -114,8 +114,8 @@ def plot_ncparam(infile, param, param2=None, outdir='.', cline=False):
 
         if grid_mapping in ['Polar_Stereographic_Grid',
                             'projection_stere']:
-            data_globe = ccrs.Globe(semimajor_axis=ncdata['proj_dict']['a'],
-                                    semiminor_axis=ncdata['proj_dict']['b'])
+            data_globe = ccrs.Globe(semimajor_axis=dataset['proj_dict']['a'],
+                                    semiminor_axis=dataset['proj_dict']['b'])
             if dataset['lat'][0, 0] > 0:
                 data_ccrs = ccrs.NorthPolarStereo(central_longitude=-45.0,
                                                   globe=data_globe)

@@ -196,7 +196,7 @@ def read_awi(buoyname, buoycat, buoydir, out_ts):
     # Checking if the file creation should be skipped
     if out_ts is not None:
         for bfile in bfiles:
-            pname = pathlib.Path(fl)
+            pname = pathlib.Path(bfile)
             txt_ts = datetime.fromtimestamp(pname.stat().st_mtime)
             if out_ts > txt_ts:
                 return None, bfiles
@@ -1381,7 +1381,7 @@ def buoy_file_to_netcdf(buoyname, buoycat, buoydir, outdir, outname, force):
               'network' : networks[buoycat],
               'history': '',
               'date_created': datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
-              'project': ''.format(bmeta['catname']),
+              'project': '{}'.format(bmeta['catname']),
               'source': 'convert_buoy_txt2netcdf.py',
               'upstream_file': orig_file,
     }

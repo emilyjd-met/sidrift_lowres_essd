@@ -2,6 +2,7 @@
 from WriteLRSID.py by T. Lavergne."""
 
 import os
+import sys
 import re
 import numpy as np
 from netCDF4 import Dataset, date2num

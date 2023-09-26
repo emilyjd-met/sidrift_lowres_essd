@@ -7,7 +7,7 @@ here = os.path.dirname(os.path.abspath(__file__))
 datadir = os.path.join(here, '../../data')
 outdir = os.path.join(here, '../../output')
 
-paramf = {'nh': os.path.join(daradir, 'paramfiles/inv_params_osi455_nh_200301-202012_1day.nc'),
+paramf = {'nh': os.path.join(datadir, 'paramfiles/inv_params_osi455_nh_200301-202012_1day.nc'),
           'sh': os.path.join(datadir, 'paramfiles/inv_params_osi455_sh_200208-202007_1day.nc')}
 
 outfile = os.path.join(outdir, 'latex_stats_paramfiles.tex')

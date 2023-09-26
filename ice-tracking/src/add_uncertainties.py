@@ -151,7 +151,9 @@ def add_uncertainty_fields(fname, mode='nrt', method='ramp'):
     t0.mask = dX.mask[0,:]
 
     if mode == 'nrt':
-        season=get_season(time_season, area)
+        pass
+        # TODO: Implement this
+        #season=get_season(time_season, area)
     elif mode == 'cdr':
         date_season = num2date(grp.variables['time_bnds'][0,1],
                                grp.variables['time_bnds'].units).strftime('%Y%m%d%H')
