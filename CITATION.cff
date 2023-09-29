@@ -1,0 +1,33 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Processing software for the EUMETSAT OSI SAF Sea Ice Drift
+  Climate Data Record v1 (OSI-455)
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Emily
+    family-names: Down
+    affiliation: Norwegian Meteorological Institute
+  - given-names: Thomas
+    family-names: Lavergne
+    affiliation: Norwegian Meteorological Institute
+    orcid: 'https://orcid.org/0000-0002-9498-4551'
+repository-code: 'https://github.com/emilyjd-met/sidrift_lowres_essd'
+abstract: >-
+  This repository holds the processing software used at the
+  Norwegian Meteorological Institute in 2020-2022 to prepare
+  the Global Sea Ice Drift Climate Data Record v1 of the
+  EUMETSAT OSI SAF (OSI-455), based on Passive Microwave
+  Radiometer data (SSM/I, SSMIS, AMSR-E, and AMSR2) and ERA5
+  winds.
+
+
+  The sea-ice drift CDR and its documentation are accessible
+  as: https://osi-saf.eumetsat.int/products/osi-455
+keywords:
+  - OSI SAF
