@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/696700319.svg)](https://zenodo.org/badge/latestdoi/696700319)
 # Processing software for the EUMETSAT OSI SAF Sea Ice Drift Climate Data Record v1 (OSI-455)
 
 This repository holds the processing software used at the Norwegian Meteorological Institute in 2020-2022 to prepare the Global Sea Ice Drift Climate Data Record v1 of the EUMETSAT OSI SAF (OSI-455), based on Passive Microwave Radiometer data (SSM/I, SSMIS, AMSR-E, and AMSR2) and ERA5 winds.
@@ -19,5 +20,3 @@ Lavergne, T. and Down, E.: A Climate Data Record of Year-Round Global Sea Ice Dr
 The processing software in this repository is to help users of the data record to gain some insights about how the algorithms were structured and implemented. This supports _transparent_ and _open_ science.
 
 We evertheless acknowledge that the software will be cumbersome for anyone but us to install and run. The software in this repository is not enough for _reproducible_ science.
-
-[![DOI](https://zenodo.org/badge/696700319.svg)](https://zenodo.org/badge/latestdoi/696700319)
