@@ -19,4 +19,4 @@ Lavergne, T. and Down, E.: A Climate Data Record of Year-Round Global Sea Ice Dr
 
 The processing software in this repository is to help users of the data record to gain some insights about how the algorithms were structured and implemented. This supports _transparent_ and _open_ science.
 
-We evertheless acknowledge that the software will be cumbersome for anyone but us to install and run. The software in this repository is not enough for _reproducible_ science.
+We nevertheless acknowledge that the software will be cumbersome for anyone but us to install and run. The software in this repository is not enough for _reproducible_ science.
