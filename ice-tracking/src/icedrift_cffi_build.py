@@ -7,9 +7,10 @@ ffibuilder = FFI()
 
 # Code paths
 here = os.path.dirname(os.path.abspath(__file__))
-osisaf_path = os.path.join(here, '../../../osisaf-hl-sw')
-icedrift_path = os.path.join(here, '../../output/icedrift')
-proj_path = os.path.join(here, '../../data/proj-4.5.0_red/src')
+aux_path = '../../aux'
+icedrift_path = os.path.join(here, '../..')
+proj_path = os.path.join(aux_path, 'libs/proj-4.5.0/src')
+fm_path = os.path.join(aux_path, 'libs/libfmutil/src')
 
 ffibuilder.set_source("_idcore", # name of the output C extension
 """
@@ -41,17 +42,17 @@ ffibuilder.set_source("_idcore", # name of the output C extension
                   os.path.join(icedrift_path,
                       'ice-tracking/src/src_simplex'),
                   os.path.join(icedrift_path,
-                      'common/src'),
-                  os.path.join(osisaf_path,
-                      'OSI_HL_Ice/common/libicecommon/include'),
-                  os.path.join(osisaf_path,
-                      'OSI_HL_common/commondefs'),
-                  os.path.join(osisaf_path,
-                      'OSI_HL_AUX/libs/libfmutil/include'),
-                  os.path.join(osisaf_path,
-                               'OSI_HL_AUX/libs/libfmutil/src'),
-                  os.path.join(osisaf_path,
-                      'OSI_HL_AUX/OSI_HL_FUNC/useproj/include'),
+                               'common/src'),
+                  os.path.join(aux_path,
+                               'libs/libicecommon/include'),
+                  os.path.join(aux_path,
+                               'commondefs'),
+                  os.path.join(aux_path,
+                               'libs/libfmutil/include'),
+                  os.path.join(aux_path,
+                               'libs/libfmutil/src'),
+                  os.path.join(aux_path,
+                               'useproj/include'),
                   # Reduced version of proj4 code
                   proj_path],
 
@@ -66,18 +67,18 @@ ffibuilder.set_source("_idcore", # name of the output C extension
                  'ice-tracking/src/src_simplex/memory.c'),
              os.path.join(icedrift_path,
                  'common/src/icedrift_common.c'),
-             os.path.join(osisaf_path,
-                 'OSI_HL_AUX/libs/libfmutil/src/fmtime.c'),
-             os.path.join(osisaf_path,
-                 'OSI_HL_AUX/libs/libfmutil/src/fmsolar.c'),
-             os.path.join(osisaf_path,
-                 'OSI_HL_AUX/libs/libfmutil/src/fmangleconversion.c'),
-             os.path.join(osisaf_path,
-                 'OSI_HL_AUX/libs/libfmutil/src/fmstorage.c'),
-             os.path.join(osisaf_path,
-                 'OSI_HL_AUX/libs/libfmutil/src/fmstrings.c'),
-             os.path.join(osisaf_path,
-                 'OSI_HL_AUX/libs/libfmutil/src/fmerrmsg.c'),
+             os.path.join(aux_path,
+                 'libs/libfmutil/src/fmtime.c'),
+             os.path.join(aux_path,
+                 'libs/libfmutil/src/fmsolar.c'),
+             os.path.join(aux_path,
+                 'libs/libfmutil/src/fmangleconversion.c'),
+             os.path.join(aux_path,
+                 'libs/libfmutil/src/fmstorage.c'),
+             os.path.join(aux_path,
+                 'libs/libfmutil/src/fmstrings.c'),
+             os.path.join(aux_path,
+                 'libs/libfmutil/src/fmerrmsg.c'),
              # Only the proj4 code which it complains without
              os.path.join(proj_path, 'adjlon.c'),
              os.path.join(proj_path, 'dmstor.c'),

@@ -287,7 +287,7 @@ def icedrift_wrapper(start_date, end_date, start_dir, end_dir, out_dir,
     griddeffile = os.path.join(workdir, '../par', griddeffilename)
     if not (os.path.exists(griddeffile) and os.path.isfile(griddeffile)):
         raise FileNotFoundError("{} is not found.".format(griddeffile))
-    out_area_def = parse_area_file(griddeffile, out_area)[0]
+    out_area_def = parse_area_file(griddeffile, out_area_name)[0]
 
     out_dims = np.zeros(3, dtype=np.uint)
     out_dims[XDIM] = out_area_def.width

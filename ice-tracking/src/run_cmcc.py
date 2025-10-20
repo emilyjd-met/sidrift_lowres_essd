@@ -21,12 +21,14 @@ datadir = os.path.join(here, '../../data')
 # we use some modules from the pmr_gridding package, which must be checked out at the same level as
 # ice-tracking/ with the command
 # git clone https://gitlab.met.no/thomasl/pmr_gridding.git
-sid_rrdp_sftw = os.path.join(here, '/../../pmr_gridding/')
-sys.path.append(sid_rrdp_sftw)
-import gridding.utils as gr_utils
-import gridding.io_handler as gr_io
+sid_rrdp_sftw = os.path.abspath(os.path.join(here, '../../pmr_gridding/gridding'))
 
-def find_concv2_file(area,dt,ext='nc',strict_date=True):
+sys.path.append(sid_rrdp_sftw)
+import utils as gr_utils
+import io_handler as gr_io
+
+
+def find_concv3_file(area,dt,ext='nc',strict_date=True):
 
     dates = [dt,]
     if not strict_date:
@@ -40,15 +42,17 @@ def find_concv2_file(area,dt,ext='nc',strict_date=True):
             # dm1
             cfile = 'ice_conc_{}_ease2-250_dm1-amsr2_{:%Y%m%d}1200.{}'.format(area,ds,ext)
             cdir = os.path.join(datadir, 'ice/conc/dm1/L4')
-        elif ds.date() >= date(2016,1,1):
+        elif ds.date() >= date(2023,1,1):
             # icdr
-            cfile = 'ice_conc_{}_ease2-250_icdr-v2p0_{:%Y%m%d}1200.{}'.format(area,ds,ext)
-            cdir = os.path.join(datadir, 'ice/conc-cont-reproc/v2p0/{}/{:%Y/%m}'.format({'nc':'','png':'quicklooks'}[ext],ds))
+            cfile = 'ice_conc_{}_ease2-250_icdr-v3p0_{:%Y%m%d}1200.{}'.format(area,ds,ext)
+            cdir = os.path.join(datadir, 'ice/conc/icdr-v3p0/{:%Y/%m}'.format(ds))
         else:
-            # cdr
-            cfile = 'ice_conc_{}_ease2-250_cdr-v2p0_{:%Y%m%d}1200.{}'.format(area,ds,ext)
-            cdir = os.path.join(datadir, 'ice/conc/osi-450/{}/{:%Y/%m}'.format({'nc':'','png':'quicklooks'}[ext],ds))
+            # cdr 
+            cfile = 'ice_conc_{}_ease2-250_cdr-v3p1_{:%Y%m%d}1200.{}'.format(area,ds,ext)
+            cdir = os.path.join(datadir, '{:%Y/%m}'.format(ds))
 
+        if not isinstance(cdir, list):
+            cdir = [cdir]
         for cd in cdir:
             fn = cd + '/' + cfile
             if os.path.exists(fn):
@@ -107,7 +111,7 @@ def remap_iceconc_file(outdir, dt, adef_o, force=False):
         return iceconc_o
 
     # find input 10km file (we use OSI-450 + OSI-430-b + DM1-SSMIS SIC files)
-    iceconc_i = find_concv2_file( hemis, dt)
+    iceconc_i = find_concv3_file( hemis, dt)
 
     print("Create ice mask from SIC file {}".format(iceconc_i))
 

@@ -68,7 +68,7 @@ extern double     **pattern_img[NBPATTERNS];
 extern short      **pattern_isvalid[NBPATTERNS];
 extern double     **pattern_img2[NBPATTERNS];
 extern short      **pattern_isvalid2[NBPATTERNS];
-double *directions;
+extern double     *directions;
 
 extern double constraint_multiplier; 
 extern double constraint_power;
