@@ -635,9 +635,7 @@ def multioi_merge(indirs, output, startdate, enddate, sensors, grid, level,
     blank0 = np.zeros(sizearr)
     blank1 = np.full(sizearr, 1)
     blankfill = np.full(sizearr, -32767)
-    projstr = str(driftdata[sensors[0]]['data_crs'])
-    projstr.replace('_PROJ4Projection(', '')
-    projstr.replace(')', '')
+    projstr = driftdata[sensors[0]]['data_crs'].to_proj4()
     write_icedrift(driftdata[sensors[0]]['area_def'],
                           None,
                           None,
