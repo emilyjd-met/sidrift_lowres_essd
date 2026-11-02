@@ -2,7 +2,7 @@ import sys
 import os
 import re
 import scipy as sp
-from scipy import ma
+from numpy import ma
 import numpy as np
 import traceback
 from operator import attrgetter
@@ -138,7 +138,7 @@ class sid_estimates:
             setattr(self, f, ma.concatenate((getattr(self, f), *all_f_fields)))
 
     def write_to_matchup_file(self, rootgrp, type):
-        if (type is not 'val' and type is not 'prd'):
+        if (type != 'val' and type != 'prd'):
             raise ValueError("ERROR: 'type' (3rd param) must be 'val' or 'prd' in call to routine" % __name__)
 
         if 'matchup' not in rootgrp.dimensions():
@@ -149,7 +149,7 @@ class sid_estimates:
             raise ValueError("ERROR: error, lengths do not match ({} != {})".format(self.lat0.count(), lmatchup))
 
     def load_from_matchup_file(self, rootgrp, type):
-        if (type is not 'val' and type is not 'prd'):
+        if (type != 'val' and type != 'prd'):
             raise ValueError("ERROR: 'type' (3rd param) must be 'val' or 'prd' in call to routine" % __name__)
 
         try:

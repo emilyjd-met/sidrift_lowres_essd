@@ -72,8 +72,8 @@ class single_selector(selector):
                     raise Exception("Attempt to apply a selector on field " +\
                                     "<%s> of an object that has no fields!" %\
                                     self.f);
-        import scipy as sp
-        if (type(ret) == sp.ma.core.MaskedArray):
+
+        if (type(ret) == np.ma.core.MaskedArray):
             return ret.data
         else:
             return ret

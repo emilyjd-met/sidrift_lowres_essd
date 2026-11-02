@@ -1,5 +1,6 @@
 '''Small script to concatenate daily matchup files to a larger file'''
 
+import sys
 import os.path
 import shutil
 import argparse
@@ -20,8 +21,22 @@ namedict = {'multi-oi': 'multi-oi_simplex_lev3',
             'ssmis-f16': 'ssmis-f16_tb90v-Lap+tb90h-Lap_simplex_lev2',
             'ssmis-f17': 'ssmis-f17_tb90v-Lap+tb90h-Lap_simplex_lev2',
             'ssmis-f18': 'ssmis-f18_tb90v-Lap+tb90h-Lap_simplex_lev2',
-            'wind': 'ecmwf-era5_none_wind_lev2'}
-
+            'wind': 'ecmwf-era5_none_wind_lev2',
+            'smmr-ni07-tb37': 'smmr-ni07_tb37v-Lap+tb37h-Lap_simplex_lev2',
+            'smmr-ni07-tb37v': 'smmr-ni07_tb37v-Lap_simplex_lev2',
+            'smmr-ni07-tb37h': 'smmr-ni07_tb37h-Lap_simplex_lev2',
+            'ssmi-f08-tb37': 'ssmi-f08_tb37v-Lap+tb37h-Lap_simplex_lev2',
+            'ssmi-f08-tb37v': 'ssmi-f08_tb37v-Lap_simplex_lev2',
+            'ssmi-f08-tb37h': 'ssmi-f08_tb37h-Lap_simplex_lev2',
+            'ssmi-f08-tb90': 'ssmi-f08_tb90v-Lap+tb90h-Lap_simplex_lev2',
+            'ssmi-f08-tb90v': 'ssmi-f08_tb90v-Lap_simplex_lev2',
+            'ssmi-f08-tb90h': 'ssmi-f08_tb90h-Lap_simplex_lev2',
+            'ssmi-f10-tb37': 'ssmi-f10_tb37v-Lap+tb37h-Lap_simplex_lev2',
+            'ssmi-f10-tb37v': 'ssmi-f10_tb37v-Lap_simplex_lev2',
+            'ssmi-f10-tb37h': 'ssmi-f10_tb37h-Lap_simplex_lev2',
+            'ssmi-f10-tb90': 'ssmi-f10_tb90v-Lap+tb90h-Lap_simplex_lev2',
+            'ssmi-f10-tb90v': 'ssmi-f10_tb90v-Lap_simplex_lev2',
+            'ssmi-f10-tb90h': 'ssmi-f10_tb90h-Lap_simplex_lev2'}
 
 
 def parse_args():
@@ -29,7 +44,12 @@ def parse_args():
     valid_sensors = ['multi-oi', 'amsr-aq', 'amsr2-gw1', 'ssmi-f10',
                      'ssmi-f11', 'ssmi-f13', 'ssmi-f14', 'ssmi-f15',
                      'ssmis-f16', 'ssmis-f17', 'ssmis-f18',
-                     'wind']
+                     'wind', 'smmr-ni07-tb37', 'smmr-ni07-tb37v',
+                     'smmr-ni07-tb37h', 'ssmi-f08-tb37', 'ssmi-f08-tb37v',
+                     'ssmi-f08-tb37h', 'ssmi-f08-tb90', 'ssmi-f08-tb90v',
+                     'ssmi-f08-tb90h', 'ssmi-f10-tb37', 'ssmi-f10-tb37v',
+                     'ssmi-f10-tb37h', 'ssmi-f10-tb90', 'ssmi-f10-tb90v',
+                     'ssmi-f10-tb90h']
 
     p = argparse.ArgumentParser("concatenate_matchups",
                                 formatter_class=RawDescriptionHelpFormatter)
@@ -70,6 +90,10 @@ def concatenate_matchups(year, month, sensor, indir, outdir):
         flist = glob(patt)
         uniqueflist = list(set(flist))
         flist = sorted(uniqueflist)
+
+        if not flist:
+            print("No files to process, exiting.")
+            sys.exit(1)
 
         # Use xarray to concatenate these files
         dataset = xr.open_mfdataset(flist, combine='nested',

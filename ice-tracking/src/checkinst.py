@@ -13,6 +13,7 @@ def checkinst(inst, plat):
     instplats['seawinds'] = [r'qscat']
     instplats['miras'] = [r'smos']
     instplats['multi'] = [r'sel', r'oi']
+    instplats['smmr'] = [r'ni(\d+)']
 
     errstrs = {}
     errstrs['ssmi'] = "Not a DMSP platform ({}) for an SSM/I instrument"
@@ -23,6 +24,7 @@ def checkinst(inst, plat):
     errstrs['seawinds'] = "Not qscat platform ({}) for SEAWINDS instrument"
     errstrs['miras'] = "Not smos platform ({}) for MIRAS instrument"
     errstrs['multi'] = "Not 'oi' or 'sel' method ({}) for MULTI instrument"
+    errstrs['smmr'] = "Not correct platform ({}) the SMMR instrument"
 
     # First check that the instrument is OK
     if not inst in instplats:

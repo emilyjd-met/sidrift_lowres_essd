@@ -18,13 +18,13 @@ here = os.path.dirname(os.path.abspath(__file__))
 par = os.path.join(here, '../par')
 datadir = os.path.join(here, '../../data')
 
-# we use some modules from the pmr_gridding package, which must be checked out at the same level as
-# ice-tracking/ with the command
+# we use some modules from the pmr_gridding package, which must be
+# checked out at the same level as ice-tracking/ with the command
 # git clone https://gitlab.met.no/thomasl/pmr_gridding.git
-sid_rrdp_sftw = os.path.join(here, '/../../pmr_gridding/')
+sid_rrdp_sftw = os.path.abspath(os.path.join(here, '../../pmr_gridding/gridding'))
 sys.path.append(sid_rrdp_sftw)
-import gridding.utils as gr_utils
-import gridding.io_handler as gr_io
+import utils as gr_utils
+import io_handler as gr_io
 
 def find_concv2_file(area,dt,ext='nc',strict_date=True):
 

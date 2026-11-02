@@ -6,7 +6,7 @@ import matplotlib.lines as mlines
 from mpl_toolkits.mplot3d import Axes3D
 import find_matchups_files as mfil
 import scipy as sp
-from scipy import ma
+from numpy import ma
 from scipy.stats import t as statst
 import numpy as np
 import cartopy
@@ -808,8 +808,11 @@ def plot_eXeY_scatterplot(m,date1,date2,outfile,product='na',channels=None,statu
 ##    ax.scatter([mstats['bias_dx']],[mstats['bias_dy']],marker='+',label=None,s=20,lw=3,c='black')
     ty = tstart
     product_str = product.upper()
-    if channels:
-        product_str += ' (' + channels.upper() + ')'
+    # Replacing 90 GHz with 85 GHz
+    if '90' in product_str:
+        product_str = product_str.replace('90', '85')
+    #if channels:
+    #    product_str += ' (' + channels.upper() + ')'
     ax.text(tx,ty,product_str,transform=ax.transAxes,fontsize=fs); ty -= tstep
     ax.text(tx,ty,"bias [km] = (%+05.3f,%+05.3f)" % (mstats['bias_dx'],mstats['bias_dy']),
              fontsize=fs,transform=ax.transAxes); ty -= tstep
@@ -948,6 +951,7 @@ def plot_dXdY_scatterplot(m,date1,date2,outfile,product='na',channels=None,statu
         cbaxes = ax.inset_axes([0.2, 0.05, 0.6, 0.03])
         cbar = plt.colorbar(hb, cax=cbaxes, orientation='horizontal')
         cbar.ax.tick_params(labelsize=tickfont)
+        del hb
 
     #xx = ax.scatter(vals_dX,prds_dX,marker='o',c=m.prd.relangle,label=None,s=30,lw=0.5,cmap=cm.inferno,vmin=0,vmax=180)
     #yy = ax.scatter(vals_dY,prds_dY,marker='^',c=m.prd.relangle,label=None,s=30,lw=0.5,cmap=cm.inferno,vmin=0,vmax=180)
@@ -970,8 +974,11 @@ def plot_dXdY_scatterplot(m,date1,date2,outfile,product='na',channels=None,statu
         product_str = product_str[:-3]
     if product_str.endswith('_TB37') or product_str.endswith('_TB19'):
         product_str = product_str[:-5]
-    if channels and channels != [None] and channels != 'none' and channels != 'None':
-        product_str += ' (' + channels.upper() + ')'
+    # Replacing 90 GHz with 85 GHz
+    if '90' in product_str:
+        product_str = product_str.replace('90', '85')
+#    if channels and channels != [None] and channels != 'none' and channels != 'None':
+#        product_str += ' (' + channels.upper() + ')'
     ax.text(tx,ty,product_str,transform=ax.transAxes,fontsize=fsdxdy); ty -= tstep
     if mstats['N'] > 0:
         ax.text(tx,ty,"bias [km] = (%+05.3f, %+05.3f)" % (mstats['bias_dx'],mstats['bias_dy']),
@@ -1010,7 +1017,7 @@ def plot_dXdY_scatterplot(m,date1,date2,outfile,product='na',channels=None,statu
     else:
         ax.set_title("Scatterplot of drift components\n{} ({})".format(m.area.upper(), datestr), fontsize=titlefont)
     plt.savefig(outfile, bbox_inches='tight',dpi=dpi)
-    plt.close()
+    plt.close(fig)
 
     return outfile, mstats
 

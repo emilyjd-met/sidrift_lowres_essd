@@ -121,10 +121,10 @@ def compute_drift(enddate, duration, area, wind_dir, param_file, out_dir='.',
     gshp = lat1.shape
 
     # Applying the model requires complex numbers
-    wc_2d = np.array(wu, dtype=np.complex)
+    wc_2d = np.array(wu, dtype=complex)
     wc_2d.imag = wv
 
-    wc = np.zeros([gsiz,], dtype=np.complex)
+    wc = np.zeros([gsiz,], dtype=complex)
     # Initialise with nans
     wc[:,].real = np.nan
     wc[:,].imag = np.nan
@@ -140,20 +140,20 @@ def compute_drift(enddate, duration, area, wind_dir, param_file, out_dir='.',
         flags = datum2.variables['flags'][:]
 
     # Recombine real and imaginary parts of both model parameters
-    a = np.array(a_real, dtype=np.complex)
+    a = np.array(a_real, dtype=complex)
     a.imag = a_imag
-    c = np.array(c_real, dtype=np.complex)
+    c = np.array(c_real, dtype=complex)
     c.imag = c_imag
 
     # 2D array to save A and C values
-    ac = np.zeros((gsiz, 2), dtype=np.complex)
+    ac = np.zeros((gsiz, 2), dtype=complex)
     ac[:,:].real = np.nan                           # changes zeros to nans
     ac[:,:].imag = np.nan
     ac[:,0] = a.flat
     ac[:,1] = c.flat
 
     # 1D array to save iceDrift values
-    id_arr = np.zeros([gsiz,], dtype=np.complex)
+    id_arr = np.zeros([gsiz,], dtype=complex)
     id_arr[:,].real = np.nan                        # changes zeros to nans
     id_arr[:,].imag = np.nan
 
@@ -163,7 +163,7 @@ def compute_drift(enddate, duration, area, wind_dir, param_file, out_dir='.',
         # for each grid point)
         wc_pt = wc[i,]
         # Attach an array of ones to the list of complex velocity values
-        wc_pt = [wc_pt, np.ones_like(wc_pt, dtype=np.complex)]
+        wc_pt = [wc_pt, np.ones_like(wc_pt, dtype=complex)]
         wc_pt = np.mat(wc_pt)
 
         ac_pt = ac[i,:]

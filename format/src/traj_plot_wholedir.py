@@ -18,7 +18,7 @@ def parse_args():
                    help="Filepath to directory of netcdf trajectory files")
     p.add_argument('-p', '--plotdir', required=True,
                    help="Filepath to directory to store maps")
-    p.add_argument('-w', '--Wide', action='store_true', default=False,
+    p.add_argument('-w', '--wide', action='store_true', default=False,
                    help="Plot the wide angle version.")
     args = p.parse_args()
 
@@ -35,14 +35,14 @@ def traj_plot_wholedir(indir, plotdir, wide=False):
             hemi = dataset.area
         if hemi == 'Northern Hemisphere':
             if wide:
-                reg = 'nh-ease-wide'
+                reg = 'ease-nh-wide'
             else:
-                reg = 'nh-ease'
+                reg = 'ease-nh'
         elif hemi == 'Southern Hemisphere':
             if wide:
-                reg = 'sh-ease-wide'
+                reg = 'ease-sh-wide'
             else:
-                reg = 'sh-ease'
+                reg = 'ease-sh'
         else:
             raise ValueError('No region found from file {}'.format(fl))
 

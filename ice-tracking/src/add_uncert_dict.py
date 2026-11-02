@@ -144,6 +144,17 @@ ud['cdr']['nh']['amsr-aq-bt37'] = {}
 ud['cdr']['nh']['amsr-aq-bt37']['winter'] = {0: 1.7, # 1.4
                                                13: 8.1, # 8.0
                                                17: 3.3} # 3.7
+
+# Copying these for 19 GHz
+ud['cdr']['nh']['amsr2-gw1-bt19'] = {}
+ud['cdr']['nh']['amsr2-gw1-bt19']['winter'] = {0: 1.7, # 1.4
+                                               13: 8.1, # 8.0
+                                               17: 3.3} # 3.7
+ud['cdr']['nh']['amsr-aq-bt19'] = {}
+ud['cdr']['nh']['amsr-aq-bt19']['winter'] = {0: 1.7, # 1.4
+                                               13: 8.1, # 8.0
+                                               17: 3.3} # 3.7
+
 ud['cdr']['nh']['ssmi'] = {}
 ud['cdr']['nh']['ssmi']['winter'] = {0: 2.3,
                                      13: 8.0,
@@ -168,6 +179,15 @@ ud['cdr']['sh']['amsr2-gw1-bt37']['winter'] = {0: 2.8, # 2.9
                                                17: 5.3}
 ud['cdr']['sh']['amsr-aq-bt37'] = {}
 ud['cdr']['sh']['amsr-aq-bt37']['winter'] = {0: 2.8, # 2.9
+                                             13: 8.3,
+                                             17: 5.3}
+# Copying these for 19 GHz
+ud['cdr']['sh']['amsr2-gw1-bt19'] = {}
+ud['cdr']['sh']['amsr2-gw1-bt19']['winter'] = {0: 2.8, # 2.9
+                                               13: 8.3,
+                                               17: 5.3}
+ud['cdr']['sh']['amsr-aq-bt19'] = {}
+ud['cdr']['sh']['amsr-aq-bt19']['winter'] = {0: 2.8, # 2.9
                                              13: 8.3,
                                              17: 5.3}
 ud['cdr']['sh']['ssmi'] = {}

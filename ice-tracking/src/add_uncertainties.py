@@ -64,8 +64,12 @@ def get_uncerts_flag(prod, area='nh',season='winter', mode='nrt'):
     #  17:uncert_smaller,   # smaller pattern
     #  30:uncert_nominal}   # wind icedrift from gapfilled param file
 
+    ### TODO - Have added early SSMI and SMMR, and for now these have the
+    ### same uncertainty as late SSMI/SSMIS. Probably need to add a
+    ### new uncertainty category
+
     prodind = prod
-    if prod.startswith('ssmi'):
+    if prod.startswith('ssmi') or prod.startswith('smmr'):
         prodind = 'ssmi'
     elif prod.startswith('amsr'):
         prodind = prodind.replace('tb', 'bt')
