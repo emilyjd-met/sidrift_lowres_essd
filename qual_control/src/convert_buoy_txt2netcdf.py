@@ -1132,10 +1132,20 @@ def compute_distances_and_vels(pddata):
     # Initialise the distances and velocity arrays
     distances = [np.nan]
     velocities = [np.nan]
-    sc1 = spherical.SCoordinate(pddata.lon[0], pddata.lat[0])
+
+    # Provide coordinates in radians
+    radians_in_degrees = np.pi / 180
+    lon = pddata.lon[0] * radians_in_degrees
+    lat = pddata.lat[0] * radians_in_degrees
+
+    sc1 = spherical.SCoordinate(lon, lat)
     t1 = pddata.datetime[0]
     for i in range(len(pddata.lat) - 1):
-        sc2 = spherical.SCoordinate(pddata.lon[i+1], pddata.lat[i+1])
+        # Provide coordinates in radians
+        lon = pddata.lon[i+1] * radians_in_degrees
+        lat = pddata.lat[i+1] * radians_in_degrees
+
+        sc2 = spherical.SCoordinate(lon, lat)
         t2 = pddata.datetime[i+1]
         dist = sc2.distance(sc1) * 1000.
         interval = (t2 - t1).total_seconds()
